@@ -1,8 +1,16 @@
 /vendor
 /node_modules
 /public/storage
+/config
+.env
+.env.example
+/routes
+/storage
 Homestead.yaml
 Homestead.json
+server.php
+/app/Http/Middleware
+
 
 
 # Elastic Beanstalk Files
