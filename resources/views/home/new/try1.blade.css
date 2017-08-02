@@ -1,0 +1,69 @@
+
+@extends('layouts.app_nogrid')
+@section('content')
+@include('home.new.launcherstyle')
+
+<script type="text/javascript" src="/coinslider/coin-slider.min.js"></script>
+<link rel="stylesheet" href="/coinslider/coin-slider-styles.css" type="text/css" />
+{{-- {{Storage::disk('s3')->url('stock/sethlogo.png')}} --}}
+<div id='coin-slider'>
+  <a href="img01_url">
+    <img src='{{Storage::disk('s3')->url('stock/stock1.jpg')}}' >
+    <span>
+      The Next Generation of Golf Instruction
+    </span>
+  </a>
+  {{-- <div class="swingtipsgolflogo">  Swing Tips Golf
+      <div style="font-size: 25px;">Perfect the Experience</div>
+      </div> --}}
+  <a href="/test">
+    <img src='{{Storage::disk('s3')->url('stock/stock2.jpg')}}' >
+    <span>
+      THE MOVEMENT
+    </span>
+  </a>
+</div>
+<script type="text/javascript">
+
+    $('#coin-slider').coinslider(
+      {
+        width: '100%',
+        height:500,
+        opacity: 1,
+        delay:5000,
+        sdelay:300,
+        effect: 'random'
+          });
+
+</script>
+<style type="text/css">
+  #coin-slider{
+    /*background-size:cover;
+    background-position: center;*/
+  }
+  .cs-title{
+    /*width: 100%;
+    text-align: center;
+    padding:20 0px;
+    background: transparent;
+    font-size: 55px;
+    line-height: 45px;
+    color:black;
+    text-shadow:1px 1px 1px white;
+    opacity: 1;*/
+  }
+  .swingtipsgolflogo{
+    width: 100%;
+    text-align: center;
+    padding:20 0px;
+    position: relative;
+    background: transparent;
+    font-size: 55px;
+    line-height: 45px;
+    color:white;
+    text-shadow:1px 1px 1px black;
+    opacity: 1;
+    padding-top: 10px;
+  }
+</style>
+@endsection

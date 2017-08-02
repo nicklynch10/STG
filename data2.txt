@@ -1,0 +1,1 @@
+ffmpeg -i "C:/Users/Nick/Google Drive/Datamine/v2/public/videos/1-m.MOV" -q:v 3 "C:/Users/Nick/Google Drive/Datamine/v2/public/videos/converted-11111-m.mp4" -y

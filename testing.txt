@@ -1,0 +1,1 @@
+ffmpeg -y -ss 00:00:10 -i "C:/Users/Nick/Google Drive/Datamine/v2/public/videos/1-1-3-m2.mov" -vframes 1 -q:v 2 "C:/Users/Nick/Google Drive/Datamine/v2/public/uploads/1-1-3-m2.jpg"
