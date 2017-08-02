@@ -10,7 +10,12 @@ Homestead.yaml
 Homestead.json
 server.php
 /app/Http/Middleware
-
+/app/Http/Controllers
+/app/Vimeo.php
+/app/Payment.php
+/app/Payout.php
+/app/User.php
+/app
 
 
 # Elastic Beanstalk Files
