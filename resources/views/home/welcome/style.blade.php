@@ -339,5 +339,6 @@ $('.arrow_left').on('click', lastSlide);
     height: 300px;
      background-repeat: no-repeat;
       background-position: 50% 50%;
+   
 }
      </style>    

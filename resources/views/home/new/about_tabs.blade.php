@@ -11,12 +11,13 @@
           </div>
     </div>
     </main>
-
+   <div class="graphicdiv mdl-cell mdl-cell--10-col mdl-shadow--2dp mdl-cell--top" style="background-image: url('{{Storage::disk('s3')->url('stock/graphic1_crop.svg')}}');">
+    </div>
    <div style="background:white; margin:auto; min-height: 60px; margin-bottom: 10px; line-height: 60px;" class="mdl-cell mdl-cell--10-col mdl-shadow--2dp mdl-cell--top">
     <a class="about_tab_button mdl-button mdl-js-button mdl-js-ripple-effect mdl-color-text--light-blue-500 company_button" data-div="company">Company</a>
-    <a class="about_tab_button mdl-button mdl-js-button mdl-js-ripple-effect mdl-color-text--light-blue-500" data-div="swingtip" style="line-height: 30px !important; width: 24% !important;min-width: 200px !important;">What is a Swing Tip or Online Instruction?</a>
-    <a class="about_tab_button mdl-button mdl-js-button mdl-js-ripple-effect mdl-color-text--light-blue-500" data-div="students">Students</a>
-    <a class="about_tab_button mdl-button mdl-js-button mdl-js-ripple-effect mdl-color-text--light-blue-500" data-div="pros" style="width: 24% !important;">Golf Instructors</a>
+    <a class="about_tab_button mdl-button mdl-js-button mdl-js-ripple-effect mdl-color-text--light-green-500" data-div="swingtip" style="line-height: 30px !important; width: 24% !important;min-width: 200px !important;">What is a Swing Tip or Online Instruction?</a>
+    <a class="about_tab_button mdl-button mdl-js-button mdl-js-ripple-effect mdl-color-text--red-500" data-div="students">Students</a>
+    <a class="about_tab_button mdl-button mdl-js-button mdl-js-ripple-effect mdl-color-text--green-500" data-div="pros" style="width: 24% !important;">Golf Instructors</a>
     </div>
 
     <div class="mdl-cell--10-col about_div company">
@@ -97,8 +98,10 @@ Our Goal: <br>
 </div>
 
     </div>
-
-
+<br><br><br>
+<footer class="mdl-mini-footer" style="background:white; margin-top:150px;">
+        <div  class="mdl-color-text--grey-900" style="text-align: center; width:100%; font-weight:300; font-size: 16px;" >Swing Tips Golf &copy; 2017</div> 
+        </footer>
 <style type="text/css">
       .input{
         width: 80%;
@@ -215,6 +218,15 @@ font-size: 25px !important;
   height: 60px !important;
    width: 25% !important;
 }
+
+.graphicdiv{
+   background-size:contain;
+    height: 300px;
+     background-repeat: no-repeat;
+      background-position: 50% 50%;
+       background-color: rgba(255,255,255,.5);
+       margin: auto;
+}
 </style> 
 
 
@@ -229,8 +241,7 @@ var div = self.data('div');
 $('.about_tab_button').css('background-color', 'white');
 self.css('background-color', 'rgba(158,158,158,.2)');
 $('.about_div').css('display', 'none');
-  $('.'+div).slideDown(300,function(){
-  });
+  $('.'+div).show();
 });
      </script> 
 @endsection

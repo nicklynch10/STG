@@ -59,7 +59,7 @@ if($pro->pro == 1){
     <b>Swing Tips Golf Balance:</b> {{$pro->balance}}<br>
     @if($is_pro)
     <b>Pending Balance:</b> {{$pro->pending_balance}}<br>
-    <a class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect payout_button" href="javascript:AlertIt();">Transfer to PayPal</a>
+    <a class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect payout_button" href="javascript:AlertIt()">Transfer to PayPal</a>
     @endif
     @endif
     @include('grid.bottom')
@@ -107,6 +107,8 @@ if($pro->pro == 1){
      <a class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-color-text--grey-800" href="{{url('/address/')}}">Edit Address Information</a>
      <br>
      <a class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-color-text--grey-800" href="{{url('/password/')}}">Change Account Password</a>
+     <br>
+     <a class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-color-text--grey-800" href="{{url('/next')}}">Next Steps</a>
 
      @include('grid.bottom')
     @endif
@@ -298,8 +300,7 @@ function AlertIt() {
 var answer = confirm ('Please input your paypal account email into your account information to continue');
 if (answer) window.location="{{url('/account')}}";
 @else
-var answer = confirm ('Please confirm that "{{Auth::user()->paypal_email}}" is the email to your paypal account. By clicking OK, you approve a paypal transfer to the paypal account of the email above.');
-if (answer) window.location="{{url('/payout')}}";
+window.location="{{url('/transfer')}}";
 @endif
 }
 </script>

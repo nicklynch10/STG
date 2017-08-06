@@ -14,6 +14,9 @@
             </div> --}}</h3>
             </div>
           </div>
+          <div class="graphicdiv" style="background-image: url('{{Storage::disk('s3')->url('stock/graphic1_crop.svg')}}');">
+{{-- <img src="{{Storage::disk('s3')->url('stock/graphic1_crop.png')}}"> --}}
+</div>
           <div class="mdl-card on-the-road-again mdl-cell mdl-cell--12-col">
             <div class="mdl-card__media mdl-color-text--grey-50">
               <h3><a href="entry.html">The Company</a></h3>

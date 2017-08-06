@@ -123,9 +123,11 @@
 </div>
 </div>
 <div class="last_home_div">
-<div>Request a Demo</div>
+<div>Learn Even More?</div>
 <br>
-@include('home.new.requestdemo')
+<div style="width: 100%; text-align: center;">
+    <a style="width:auto;" href="{{url('/request/demo')}}" class="center-button submit_button btn btn-primary mdl-button mdl-js-button mdl-button--raised mdl-button--colored mdl-color-text--grey-50">Request Demo</a>
+  </div>
 </div>
 
 <footer class="mdl-mini-footer" style="background:white;">
