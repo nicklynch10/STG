@@ -9,13 +9,13 @@ if($academy->is_in(Auth::user()))$is_me = true;
 @section('content')
 @include('dashboard.scripts')
 <div class="mdl-grid">
-<div style="background-size:cover;background-image: url('{{$pro->cover or $pro->propic}}'); width:calc(100% + 20px); height:400px;background-position: center; margin: -5px -7px;" class="cover">
+<div id="cover" style="background-size:cover;background-image: url('{{$pro->cover or $pro->propic}}'); width:calc(100% + 20px); height:400px;background-position: center; margin: -5px -7px;  cursor: pointer;" class="cover">
 </div>
   <div style="margin-top:-300px;" class="mdl-cell--4-col fix_grid" >
     <div class="mdl-cell--12-col mdl-grid">
-      <figure style="margin: 0px;">
-        <img class="mdl-shadow--4dp mdl-color--white-100 is-casting-shadow propic" style="width:500px" src="{{$pro->propic or $pro->cover}}">
-      </figure>
+      <a style="margin: 0px; cursor: pointer;">
+        <img id="propic" class="mdl-shadow--4dp mdl-color--white-100 is-casting-shadow propic" style="width:500px" src="{{$pro->propic or $pro->cover}}">
+      </a>
     </div>
     @include('grid.top',["title"=>$pro->morphname(), "size"=>12])
     {{$pro->city}}, {{$pro->state}}<br>
@@ -38,7 +38,7 @@ if($academy->is_in(Auth::user()))$is_me = true;
     <form  enctype="multipart/form-data" role="form" method="POST" action="{{ url('/academy/upload/'.$pro->id) }}">
   {{ csrf_field() }}
   
-  <input class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect" type="file" name="pic" accept="image/*">
+  <input class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect upload_propic" type="file" name="pic" accept="image/*">
   <button type="submit" class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect">
   Upload Profile Picture
   </button>
@@ -46,7 +46,7 @@ if($academy->is_in(Auth::user()))$is_me = true;
 <hr>
 <form  enctype="multipart/form-data" role="form" method="POST" action="{{ url('/academy/upload/'.$pro->id) }}">
   {{ csrf_field() }}
-  <input class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect" type="file" name="cover" accept="image/*">
+  <input class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect upload_cover" type="file" name="cover" accept="image/*">
   <button type="submit" class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect">
   Upload Cover Photo
   </button>
@@ -150,6 +150,25 @@ $('.propic').css('width', Math.floor(pp_percent*100)+"vw");
 //$('.fix_grid').width($('.propic').width()+10);
 
 $('.add_pro').select2();
+
+
+@if($academy->is_in(Auth::user()))
+$('#cover').on('click', function() {
+  $('.upload_cover').trigger('click');
+  $('.upload_cover').on('change', function(event) {
+    $(this).closest('form').trigger('submit');
+    $('.upload_cover').off('change');
+  });
+});
+$('#propic').on('click', function() {
+  $('.upload_propic').trigger('click');
+  $('.upload_propic').on('change', function(event) {
+    $(this).closest('form').trigger('submit');
+    $('.upload_propic').off('change');
+  });
+});
+
+@endif
 </script>
 <style type="text/css">
 .note_link{
@@ -184,4 +203,13 @@ body{
 }
 </style>
 
+@if($academy->is_in(Auth::user()))
+<div class="mdl-tooltip mdl-tooltip--large" for="propic" 
+ style="will-change:inherit; margin-top: -100px;" >
+Change Profile Picture
+</div>
+<div class="mdl-tooltip mdl-tooltip--top mdl-tooltip--large" for="cover" style="will-change:inherit; margin-top: 100px;" >
+Change Cover Photo
+</div>
+@endif
 @endsection
