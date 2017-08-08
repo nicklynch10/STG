@@ -9,7 +9,7 @@
   display: none;
 }
 .center-button{
-    width:150px;
+    min-width:150px;
     height: 50px;
     line-height: 50px;
     font-size: 18px;
@@ -191,6 +191,8 @@ font-size: 20px;
       height: auto;
       line-height: auto;
       /*padding: 5px 20px;*/
+      margin: 5px;
+
     }
     .mobile_center{
       margin:auto !important;

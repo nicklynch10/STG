@@ -1,6 +1,6 @@
 
 <div class="fancy-text2">
-The Next Generation of Golf Instruction
+Golf Instruction Colaboration Platform
 </div>
 <div style="width: 100%; text-align: center; margin-top: 50px;">
 @if(Auth::check())

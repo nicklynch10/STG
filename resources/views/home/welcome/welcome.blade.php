@@ -129,7 +129,9 @@
     <a style="width:auto;" href="{{url('/request/demo')}}" class="center-button submit_button btn btn-primary mdl-button mdl-js-button mdl-button--raised mdl-button--colored mdl-color-text--grey-50">Request Demo</a>
   </div>
 </div>
+@include('home.new.signup_buttons')
 
+<br><br>
 <footer class="mdl-mini-footer" style="background:white;">
         <div  class="mdl-color-text--grey-900" style="text-align: center; width:100%; font-weight:300; font-size: 16px;" >Swing Tips Golf &copy; 2017</div> 
         </footer>

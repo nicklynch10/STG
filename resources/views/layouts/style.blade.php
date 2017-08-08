@@ -917,6 +917,11 @@ z-index: 125;
     .mobile_hide{
       display: none !important;
     }
+
+    .bar{
+      display: block !important;
+      text-align: center;
+    }
 }
 @media all and (max-width: 1100px) {
   .android-title{

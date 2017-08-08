@@ -13,9 +13,9 @@
     </main>
    <div class="graphicdiv mdl-cell mdl-cell--10-col mdl-shadow--2dp mdl-cell--top" style="background-image: url('{{Storage::disk('s3')->url('stock/graphic1_crop.svg')}}');">
     </div>
-   <div style="background:white; margin:auto; min-height: 60px; margin-bottom: 10px; line-height: 60px;" class="mdl-cell mdl-cell--10-col mdl-shadow--2dp mdl-cell--top">
+   <div style="background:white; margin:auto; min-height: 60px; margin-bottom: 10px; line-height: 60px;" class="mdl-cell mdl-cell--10-col mdl-shadow--2dp mdl-cell--top bar">
     <a class="about_tab_button mdl-button mdl-js-button mdl-js-ripple-effect mdl-color-text--light-blue-500 company_button" data-div="company">Company</a>
-    <a class="about_tab_button mdl-button mdl-js-button mdl-js-ripple-effect mdl-color-text--light-green-500" data-div="swingtip" style="line-height: 30px !important; width: 24% !important;min-width: 200px !important;">What is a Swing Tip or Online Instruction?</a>
+    <a class="about_tab_button mdl-button mdl-js-button mdl-js-ripple-effect mdl-color-text--light-green-500" data-div="swingtip" style="line-height: 30px !important;min-width: 190px !important;">What is a Swing Tip or Online Instruction?</a>
     <a class="about_tab_button mdl-button mdl-js-button mdl-js-ripple-effect mdl-color-text--red-500" data-div="students">Students</a>
     <a class="about_tab_button mdl-button mdl-js-button mdl-js-ripple-effect mdl-color-text--green-500" data-div="pros" style="width: 24% !important;">Golf Instructors</a>
     </div>
@@ -98,8 +98,10 @@ Our Goal: <br>
 </div>
 
     </div>
-<br><br><br>
-<footer class="mdl-mini-footer" style="background:white; margin-top:150px;">
+<br><br><br><br>
+
+@include('home.new.signup_buttons')
+<footer class="mdl-mini-footer" style="background:white; margin-top:5px;">
         <div  class="mdl-color-text--grey-900" style="text-align: center; width:100%; font-weight:300; font-size: 16px;" >Swing Tips Golf &copy; 2017</div> 
         </footer>
 <style type="text/css">
@@ -151,7 +153,7 @@ padding: 0px;
 }
 
 .center-button{
-    width:150px;
+    min-width:150px;
     height: 50px;
     line-height: 50px;
     font-size: 18px;
@@ -210,13 +212,13 @@ h3{
 
 
 .about_tab_button{
-  padding: 0px !important;
+  padding: 5px !important;
   margin: 0px !important;
 min-width: 100px !important;
 font-size: 25px !important;
  line-height: 60px !important;
   height: 60px !important;
-   width: 25% !important;
+   width: 23% !important;
 }
 
 .graphicdiv{
@@ -227,8 +229,43 @@ font-size: 25px !important;
        background-color: rgba(255,255,255,.5);
        margin: auto;
 }
-</style> 
+@media all and (max-width: 768px) {
+    .home_div {
+        display: block;
+        width: 100%;
+    }
+    .home_div>.sub_content{
+      width: auto;
+      padding-top:0px;
+    }
+    .home_div>.sub_title{
+      width: auto;
+      text-align: center;
+      vertical-align: center;
+    }
+    .above_help_card{
+      display: block;
+    }
+    .above_help_card>div{
+      width: 100%;
+    }
+    .center-button{
+      height: auto;
+      line-height: auto;
+      /*padding: 5px 20px;*/
+      margin: 5px;
 
+    }
+    .mobile_center{
+      margin:auto !important;
+      text-align: center !important;
+
+    }
+
+
+
+}
+</style> 
 
      <script type="text/javascript">
 $('.about_div').css('display', 'none');
